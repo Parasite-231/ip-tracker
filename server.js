@@ -4,7 +4,7 @@ const app = express();
 app.get('/', (req, res) => {
   const ipAddress = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
   console.log("User IP Address:", ipAddress);
-  res.send(ipAddress);
+  res.json({ ipAddress });
 });
 
 app.listen(process.env.PORT || 3000, () => {
