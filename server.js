@@ -12,6 +12,7 @@ app.get('/', (req, res) => {
       return;
     }
     const updatedHtml = html.replace('<%= ipAddress %>', ipAddress);
+    console.log(ipAddress)
     res.send(updatedHtml);
   });
 });
